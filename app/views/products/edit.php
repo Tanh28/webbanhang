@@ -8,7 +8,8 @@
             <?php endforeach; ?>
         </ul>
     </div>
-<?php endif; ?><form method="POST" action="/webbanhang/Product/update" enctype="multipart/form-data"
+<?php endif; ?>
+<form method="POST" action="/project1/Product/update" enctype="multipart/form-data"
     onsubmit="return validateForm();">
     <input type="hidden" name="id" value="<?php echo $product->id; ?>">
     <div class="form-group">
@@ -33,9 +34,13 @@
         <select id="category_id" name="category_id" class="form-control" required>
             <?php foreach ($categories as $category): ?>
                 <option value="<?php echo $category->id; ?>" <?php echo $category->id
+
                                                                     == $product->category_id ? 'selected' : ''; ?>>
+
                     <?php echo htmlspecialchars($category->name, ENT_QUOTES, 'UTF-8');
+
                     ?>
+
                 </option>
             <?php endforeach; ?>
         </select>
@@ -43,13 +48,16 @@
     <div class="form-group">
         <label for="image">Hình ảnh:</label>
         <input type="file" id="image" name="image" class="form-control">
-        <input type="hidden" name="existing_image" value="<?php echo $product->image; ?>">
+        <input type="hidden" name="existing_image" value="<?php echo $product->image;
+                                                            ?>">
         <?php if ($product->image): ?>
-            <img src="/webbanhang/<?php echo $product->image; ?>" alt="Product Image" style="max-width: 100px;">
+
+            <img src="/<?php echo $product->image; ?>" alt="Product Image" style="max-width: 100px;">
+
         <?php endif; ?>
     </div>
     <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
 </form>
-<a href="/webbanhang/Product/list" class="btn btn-secondary mt-2">Quay lại danh sách
+<a href="/project1/Product/list" class="btn btn-secondary mt-2">Quay lại danh sách
     sản phẩm</a>
-<?php include 'app/views/shares/footer.php'; ?>
+    <?php include 'app/views/shares/footer.php'; ?>
