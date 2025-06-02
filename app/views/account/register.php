@@ -1,40 +1,48 @@
 <?php include 'app/views/shares/header.php'; ?>
-<?php
-if (isset($errors)) {
-    echo "<ul>";
-    foreach ($errors as $err) {
-        echo "<li class='text-danger'>$err</li>";
-    }
-    echo "</ul>";
-}
-?>
-<div class="card-body p-5 text-center">
-    <form class="user" action="/webbanhang/account/save" method="post">
-        <div class="form-group row">
-            <div class="col-sm-6 mb-3 mb-sm-0">
-                <input type="text" class="form-control form-control-user"
-                    id="username" name="username" placeholder="username">
+<link rel="stylesheet" href="/webbanhang/public/css/style.css">
+
+<div class="form-container">
+    <div class="form-card">
+        <h2>Đăng ký tài khoản</h2>
+
+        <?php if (isset($errors)): ?>
+            <ul class="form-errors">
+                <?php foreach ($errors as $err): ?>
+                    <li><?php echo $err; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+
+        <form action="/webbanhang/account/save" method="post">
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="fullname">Họ tên</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmpassword">Xác nhận mật khẩu</label>
+                    <input type="password" id="confirmpassword" name="confirmpassword" required>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <input type="text" class="form-control form-control-user"
-                    id="fullname" name="fullname" placeholder="fullname">
+
+            <!-- <div class="form-group-row">
+                
+            </div> -->
+
+            <div class="form-actions">
+                <button type="submit" class="btn">Đăng ký</button>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-6 mb-3 mb-sm-0">
-                <input type="password" class="form-control form-control-user"
-                    id="password" name="password" placeholder="password">
-            </div>
-            <div class="col-sm-6">
-                <input type="password" class="form-control form-control-user"
-                    id="confirmpassword" name="confirmpassword" placeholder="confirmpassword">
-            </div>
-        </div>
-        <div class="form-group text-center">
-            <button class="btn btn-primary btn-icon-split p-3">
-                Register
-            </button>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
+
 <?php include 'app/views/shares/footer.php'; ?>

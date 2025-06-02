@@ -1,58 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý sản phẩm</title>
-    <link
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        rel="stylesheet">
-    <style>
-        .product-image {
-            max-width: 100px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="/webbanhang/public/css/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Quản lý sản phẩm</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" datatarget="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
-navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="/webbanhang/Product/">Danh sách sản
-                        phẩm</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/webbanhang/Product/add">Thêm sản
-                        phẩm</a>
-                </li>
-                <li class="nav-item">
+    <header>
+        <div class="container">
+            <h1>🛒 Quản lý sản phẩm</h1>
+            <nav>
+                <ul>
+                    <li><a href="/webbanhang/Product/">Trang chủ</a></li>
+                    <li><a href="/webbanhang/Product/add">Thêm sản phẩm</a></li>
+                    <li><a href="/webbanhang/Category/list">Danh mục</a></li>
+                    <li>
+                        <?php
+                        if (SessionHelper::isLoggedIn()) {
+                            echo "<a class='nav-link'>".$_SESSION['username']."</a>";
+                        } else {
+                            echo "<a class='nav-link' href='/webbanhang/account/login'>Đăng nhập</a>";
+                        }
+                        ?>
+                    </li>
                     <?php
                     if (SessionHelper::isLoggedIn()) {
-                        echo "<a class='navlink'>" . $_SESSION['username'] . "</a>";
-                    } else {
-                        echo "<a class='nav-link'
-href='/webbanhang/account/login'>Login</a>";
+                        echo "<li><a class='nav-link' href='/webbanhang/account/logout'>Đăng xuất</a></li>";
                     }
                     ?>
-                </li>
-                <li class="nav-item">
-                    </a>
-                    <?php
-                    if (SessionHelper::isLoggedIn()) {
-                        echo "<a class='nav-link'
-href='/webbanhang/account/logout'>Logout</a>";
-                    }
-                    ?>
-                </li>
-            </ul>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
+
     <div class="container mt-4">
