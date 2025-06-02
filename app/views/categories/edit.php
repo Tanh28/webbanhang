@@ -11,7 +11,7 @@
     </div>
 <?php endif; ?>
 
-<form method="POST" action="/project1/Category/update" onsubmit="return validateForm();">
+<form method="POST" action="/webbanhang/Category/update" onsubmit="return validateForm();">
     <input type="hidden" name="id" value="<?php echo htmlspecialchars($category->id, ENT_QUOTES, 'UTF-8'); ?>">
 
     <div class="form-group">
@@ -43,7 +43,7 @@
     <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
 </form>
 
-<a href="/project1/Category/list" class="btn btn-secondary mt-2">Quay lại danh sách danh mục</a>
+<a href="/webbanhang/Category/list" class="btn btn-secondary mt-2">Quay lại danh sách danh mục</a>
 
 <script>
 function validateForm() {

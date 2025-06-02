@@ -9,7 +9,7 @@
         </ul>
     </div>
 <?php endif; ?>
-<form method="POST" action="/project1/Product/save" enctype="multipart/form-data"
+<form method="POST" action="/webbanhang/Product/save" enctype="multipart/form-data"
     onsubmit="return validateForm();">
     <div class="form-group">
         <label for="name">Tên sản phẩm:</label>
@@ -41,6 +41,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
 </form>
-<a href="/project1/Product/list" class="btn btn-secondary mt-2">Quay lại danh sách
+<a href="/webbanhang/Product/list" class="btn btn-secondary mt-2">Quay lại danh sách
     sản phẩm</a>
 <?php include 'app/views/shares/footer.php'; ?>

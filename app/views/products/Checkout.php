@@ -1,6 +1,6 @@
 <?php include 'app/views/shares/header.php'; ?>
 <h1>Thanh toán</h1>
-<form method="POST" action="/project1/Product/processCheckout">
+<form method="POST" action="/webbanhang/Product/processCheckout">
     <div class="form-group">
         <label for="name">Họ tên:</label>
         <input type="text" id="name" name="name" class="form-control" required>
@@ -16,6 +16,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Thanh toán</button>
 </form>
-<a href="/project1/Product/cart" class="btn btn-secondary mt-2">Quay lại giỏ
+<a href="/webbanhang/Product/cart" class="btn btn-secondary mt-2">Quay lại giỏ
     hàng</a>
 <?php include 'app/views/shares/footer.php'; ?>

@@ -28,7 +28,7 @@ class CategoryController
     public function delete($id)
     {
         if ($this->categoryModel->deleteCategory($id)) {
-            header('Location: /project1/Category/list');
+            header('Location: /webbanhang/Category/list');
             exit;
         } else {
             die('Xóa không thành công');
@@ -43,7 +43,7 @@ class CategoryController
         $result = $this->categoryModel->addCategory($name, $description);
 
         if ($result === true) {
-            header('Location: /project1/Category/list');
+            header('Location: /webbanhang/Category/list');
             exit;
         } else {
             $errors = $result;
@@ -67,7 +67,7 @@ public function update()
         $result = $this->categoryModel->updateCategory($id, $name, $description);
 
         if ($result === true) {
-            header('Location: /project1/Category/list');
+            header('Location: /webbanhang/Category/list');
             exit;
         } else {
             $errors = $result;

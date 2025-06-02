@@ -57,7 +57,7 @@ class ProductController
                 $categories = (new CategoryModel($this->db))->getCategories();
                 include 'app/views/products/add.php';
             } else {
-                header('Location: /project1/Product');
+                header('Location: /webbanhang/Product');
             }
         }
     }
@@ -97,7 +97,7 @@ class ProductController
     public function delete($id)
     {
         if ($this->productModel->deleteProduct($id)) {
-            header('Location: /project1/Product');
+            header('Location: /webbanhang/Product');
         } else {
             echo "Đã xảy ra lỗi khi xóa sản phẩm.";
         }
@@ -122,7 +122,7 @@ class ProductController
                 'image' => $product->image
             ];
         }
-        header('Location: /project1/Product/cart');
+        header('Location: /webbanhang/Product/cart');
     }
     public function cart()
     {
@@ -177,7 +177,7 @@ quantity, price) VALUES (:order_id, :product_id, :quantity, :price)";
                 // Commit giao dịch
                 $this->db->commit();
                 // Chuyển hướng đến trang xác nhận đơn hàng
-                header('Location: /project1/Product/orderConfirmation');
+                header('Location: /webbanhang/Product/orderConfirmation');
             } catch (Exception $e) {
                 // Rollback giao dịch nếu có lỗi
                 $this->db->rollBack();
@@ -230,7 +230,7 @@ quantity, price) VALUES (:order_id, :product_id, :quantity, :price)";
             );
 
             if ($result) {
-                header('Location: /project1/Product');
+                header('Location: /webbanhang/Product');
                 exit;
             } else {
                 echo "Cập nhật sản phẩm thất bại.";

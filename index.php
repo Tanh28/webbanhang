@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'app/models/ProductModel.php';
-require_once 'app/models/CategoryModel.php';
+require_once 'app/helpers/SessionHelper.php';
 // Product/add
 $url = $_GET['url'] ?? '';
 $url = rtrim($url, '/');
@@ -12,9 +12,7 @@ $controllerName = isset($url[0]) && $url[0] != '' ? ucfirst($url[0]) . 'Controll
     'DefaultController';
 // Kiểm tra phần thứ hai của URL để xác định action
 $action = isset($url[1]) && $url[1] != '' ? $url[1] : 'index';
-
 // die ("controller=$controllerName - action=$action");
-
 // Kiểm tra xem controller và action có tồn tại không
 if (!file_exists('app/controllers/' . $controllerName . '.php')) {
     // Xử lý không tìm thấy controller

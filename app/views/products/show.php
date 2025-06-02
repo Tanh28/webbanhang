@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <?php if ($product->image): ?>
-                            <img src="/project1/<?php echo
+                            <img src="/webbanhang/<?php echo
                                                     htmlspecialchars($product->image, ENT_QUOTES, 'UTF-8'); ?>"
 
                                 class="img-fluid rounded" alt="<?php echo
@@ -17,7 +17,7 @@
                                                                 htmlspecialchars($product->name, ENT_QUOTES, 'UTF-8'); ?>">
 
                         <?php else: ?>
-                            <img src="/project1/images/no-image.png"
+                            <img src="/webbanhang/images/no-image.png"
                                 class="img-fluid rounded" alt="Không có ảnh">
 
                         <?php endif; ?>
@@ -55,13 +55,13 @@
                             </span>
                         </p>
                         <div class="mt-4">
-                            <a href="/project1/Product/addToCart/<?php echo
+                            <a href="/webbanhang/Product/addToCart/<?php echo
 
                                                                     $product->id; ?>"
 
                                 class="btn btn-success px-4">➕ Thêm vào giỏ hàng</a>
 
-                            <a href="/project1/Product/list" class="btn btn-
+                            <a href="/webbanhang/Product/list" class="btn btn-
 secondary px-4 ml-2">Quay lại danh sách</a>
 
                         </div>

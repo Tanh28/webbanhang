@@ -8,32 +8,49 @@
     <link
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         rel="stylesheet">
+    <style>
+        .product-image {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Quản lý sản phẩm</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-
-            target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
-
+        <button class="navbar-toggler" type="button" data-toggle="collapse" datatarget="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
 navigation">
-
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/project1/Product/">Danh sách sản
-
+                <li class="nav-item"><a class="nav-link" href="/webbanhang/Product/">Danh sách sản
                         phẩm</a>
-
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/project1/Product/add">Thêm sản
-
+                    <a class="nav-link" href="/webbanhang/Product/add">Thêm sản
                         phẩm</a>
-
+                </li>
+                <li class="nav-item">
+                    <?php
+                    if (SessionHelper::isLoggedIn()) {
+                        echo "<a class='navlink'>" . $_SESSION['username'] . "</a>";
+                    } else {
+                        echo "<a class='nav-link'
+href='/webbanhang/account/login'>Login</a>";
+                    }
+                    ?>
+                </li>
+                <li class="nav-item">
+                    </a>
+                    <?php
+                    if (SessionHelper::isLoggedIn()) {
+                        echo "<a class='nav-link'
+href='/webbanhang/account/logout'>Logout</a>";
+                    }
+                    ?>
                 </li>
             </ul>
         </div>

@@ -9,7 +9,7 @@
                     ?></h2>
 
                 <?php if ($item['image']): ?>
-                    <img src="/project1/<?php echo $item['image']; ?>" alt="Product
+                    <img src="/webbanhang/<?php echo $item['image']; ?>" alt="Product
 
 Image" style="max-width: 100px;">
                 <?php endif; ?>
@@ -29,6 +29,6 @@ Image" style="max-width: 100px;">
 <?php else: ?>
     <p>Giỏ hàng của bạn đang trống.</p>
 <?php endif; ?>
-<a href="/project1/Product" class="btn btn-secondary mt-2">Tiếp tục mua sắm</a>
-<a href="/project1/Product/checkout" class="btn btn-secondary mt-2">Thanh Toán</a>
+<a href="/webbanhang/Product" class="btn btn-secondary mt-2">Tiếp tục mua sắm</a>
+<a href="/webbanhang/Product/checkout" class="btn btn-secondary mt-2">Thanh Toán</a>
 <?php include 'app/views/shares/footer.php'; ?>
