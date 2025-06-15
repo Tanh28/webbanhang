@@ -18,19 +18,17 @@
                     <li><a href="/webbanhang/Product/add">Thêm sản phẩm</a></li>
                     <li><a href="/webbanhang/Category/list">Danh mục</a></li>
                     <li>
-                        <?php
-                        if (SessionHelper::isLoggedIn()) {
-                            echo "<a class='nav-link'>".$_SESSION['username']."</a>";
+                        <?php if (SessionHelper::isLoggedIn()) {
+                            echo "<a class='nav-link'>" .
+                                $_SESSION["username"] .
+                                "</a>";
                         } else {
                             echo "<a class='nav-link' href='/webbanhang/account/login'>Đăng nhập</a>";
-                        }
-                        ?>
+                        } ?>
                     </li>
-                    <?php
-                    if (SessionHelper::isLoggedIn()) {
+                    <?php if (SessionHelper::isLoggedIn()) {
                         echo "<li><a class='nav-link' href='/webbanhang/account/logout'>Đăng xuất</a></li>";
-                    }
-                    ?>
+                    } ?>
                 </ul>
             </nav>
         </div>

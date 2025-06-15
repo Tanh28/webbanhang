@@ -1,6 +1,6 @@
 <?php
-require_once('app/config/database.php');
-require_once('app/models/CategoryModel.php');
+require_once "app/config/database.php";
+require_once "app/models/CategoryModel.php";
 class CategoryApiController
 {
     private $categoryModel;
@@ -13,8 +13,9 @@ class CategoryApiController
     // Lấy danh sách danh mục
     public function index()
     {
-        header('Content-Type: application/json');
+        header("Content-Type: application/json");
         $categories = $this->categoryModel->getCategories();
         echo json_encode($categories);
     }
 }
+?>
